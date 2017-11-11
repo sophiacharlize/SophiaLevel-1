@@ -64,7 +64,7 @@ public class Jeopardy implements ActionListener {
 		// 8. Write the code inside the createButton() method below. Check that your game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 		
 		// 9. Use the secondButton variable to hold a button using the createButton method
-		secondButton = createButton("700");
+		secondButton = createButton("$700");
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
@@ -106,16 +106,19 @@ public class Jeopardy implements ActionListener {
          playJeopardyTheme();
 		JButton buttonPressed = (JButton) arg0.getSource();
 		// If the buttonPressed was the firstButton
-		if(buttonPressed== firstButton || buttonPressed ==secondButton) {
+		if(buttonPressed== firstButton ) {
 			
 		
 			// Call the askQuestion() method
-			askQuestion("What is x if x - 5 = 200?", "205", 5000);
+			
+			askQuestion("What is x if x - 5 = 200?", "205", 200);
 		}
 			// Fill in the askQuestion() method. When you play the game, the score should change.
 		
 		// Or if the buttonPressed was the secondButton
-          
+          if(buttonPressed== secondButton) {
+        	  askQuestion("What is Justin Bieber's birthday?" , "March 1st 1994", 700);
+          }
 
 			// Call the askQuestion() method with a harder question
 			//askQuestion("What is ")
@@ -126,7 +129,7 @@ public class Jeopardy implements ActionListener {
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		// Remove this temporary message
-		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
+		
 		// Use a pop up to ask the user the question
 	String answer = JOptionPane.showInputDialog(question);
 		// If the answer is correct
